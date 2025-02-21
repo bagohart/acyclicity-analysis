@@ -1,0 +1,13 @@
+nach update von kubuntu passieren komische dinge:
+ascii argument error beim benutzen von wrong.
+lösung: gem uninstall wrong
+in gem-file hinzufügen von 2 zeilen:
+
+Encoding.default_external = Encoding::UTF_8
+Encoding.default_internal = Encoding::UTF_8
+
+danach bundle
+=> installiert wrong neu mit anderem encoding
+
+dieser befehl kann so dateiformate ändern btw
+iconv -f iso-8859-1 -t utf-8 sexpression.rb.1 -o ohaicanhas
